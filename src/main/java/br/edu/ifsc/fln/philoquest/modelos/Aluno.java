@@ -1,0 +1,36 @@
+package br.edu.ifsc.fln.philoquest.modelos;
+
+import java.util.List;
+
+import br.edu.ifsc.fln.philoquest.modelos.enums.*;
+
+public class Aluno extends Usuario{
+private int xpTotal;
+private NivelAluno nivel;
+private Turma turma;
+private List<Object> colecao;
+
+public Aluno(String matricula, String nome, String senha) {
+    super(matricula, nome, senha);
+}
+
+@Override
+public boolean login(String matricula, String senha) {
+    return false;
+}
+
+@Override
+public void logout() {}
+
+@Override
+public void atualizarPerfil() {}
+
+public void enviarSubmissao(Etapa etapa, String conteudo) {}
+
+public void postarNoMural(String texto) {}
+
+public void curtirPost(MuralPost post) {}
+
+public void visualizarColecao() {}
+
+}
