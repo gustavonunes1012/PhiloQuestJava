@@ -1,7 +1,11 @@
 package br.edu.ifsc.fln.philoquest.modelos;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Professor  extends Usuario{
 @Override
 public boolean login(String matricula, String senha) {

@@ -1,14 +1,19 @@
 package br.edu.ifsc.fln.philoquest.modelos;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Usuario {
     protected String matricula;
     protected String nome;
-    protected  String senha;
-public abstract boolean login (String matricula, String senha);
-public abstract void logout ();
-public abstract void atualizarPerfil ();
+    protected String senha;
 
-    
+    public abstract boolean login(String matricula, String senha);
+    public abstract void logout();
+    public abstract void atualizarPerfil();
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -49,23 +54,5 @@ public abstract void atualizarPerfil ();
         this.nome = nome;
         this.senha = senha;
     }
-    public String getMatricula() {
-        return matricula;
-    }
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-    
+
 }

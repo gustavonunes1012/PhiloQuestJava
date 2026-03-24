@@ -3,7 +3,11 @@ package br.edu.ifsc.fln.philoquest.modelos;
 import java.util.List;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Aluno extends Usuario{
 private int xpTotal;
 private NivelAluno nivel;

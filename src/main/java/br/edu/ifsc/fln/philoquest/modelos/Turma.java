@@ -2,7 +2,11 @@ package br.edu.ifsc.fln.philoquest.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Turma {
 private String nomeDaTurma;
 private String codigoTurma;
@@ -62,29 +66,6 @@ public Turma(String nomeDaTurma, String codigoTurma, Professor professor) {
     this.professor = professor;
     this.alunos = new ArrayList<>();
 }
-public String getNomeDaTurma() {
-    return nomeDaTurma;
-}
-public void setNomeDaTurma(String nomeDaTurma) {
-    this.nomeDaTurma = nomeDaTurma;
-}
-public String getCodigoTurma() {
-    return codigoTurma;
-}
-public void setCodigoTurma(String codigoTurma) {
-    this.codigoTurma = codigoTurma;
-}
-public Professor getProfessor() {
-    return professor;
-}
-public void setProfessor(Professor professor) {
-    this.professor = professor;
-}
-public List<Aluno> getAlunos() {
-    return alunos;
-}
-public void setAlunos(List<Aluno> alunos) {
-    this.alunos = alunos;
-}
+
 
 }

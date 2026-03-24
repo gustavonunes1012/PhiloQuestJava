@@ -4,7 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class ProgressoCiclo {
     private StatusCiclo status;
     private Date dataInicio;
