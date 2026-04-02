@@ -3,6 +3,7 @@ package br.edu.ifsc.fln.philoquest.modelos;
 import java.util.List;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
