@@ -2,11 +2,14 @@ package br.edu.ifsc.fln.philoquest.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 public class Turma {
 private String nomeDaTurma;
 private String codigoTurma;

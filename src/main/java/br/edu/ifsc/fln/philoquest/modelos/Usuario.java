@@ -1,11 +1,17 @@
 package br.edu.ifsc.fln.philoquest.modelos;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 public abstract class Usuario {
+    @Id
     protected String matricula;
     protected String nome;
     protected String senha;
