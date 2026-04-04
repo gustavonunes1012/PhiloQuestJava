@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,9 +15,14 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Turma {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 private String nomeDaTurma;
 private String codigoTurma;
+@OneToOne
 private Professor professor;
+@OneToMany
 private List <Aluno> alunos;
 
 public void adicionarAluno (Aluno aluno){}

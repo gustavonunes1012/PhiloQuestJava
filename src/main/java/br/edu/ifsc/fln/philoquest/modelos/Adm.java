@@ -2,12 +2,14 @@ package br.edu.ifsc.fln.philoquest.modelos;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@PrimaryKeyJoinColumn(name = "matricula")
 public class Adm extends Usuario{
 @Override
 public boolean login(String matricula, String senha) {
