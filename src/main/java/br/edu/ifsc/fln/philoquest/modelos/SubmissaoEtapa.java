@@ -4,10 +4,12 @@ import java.util.Date;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumeratedValue;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,11 +23,11 @@ public class SubmissaoEtapa {
     private String conteudo;
     private String urlAnexo;
     private Date dataEnvio;
-    @EnumeratedValue
+    @Enumerated(EnumType.STRING)
     private StatusSubmissao status;
     private Double nota;
     private String feedback;
     private Integer xpGanho;
-    @OneToOne
+    @ManyToOne
     private Etapa etapa;
 }

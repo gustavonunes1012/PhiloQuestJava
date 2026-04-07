@@ -3,8 +3,10 @@ package br.edu.ifsc.fln.philoquest.modelos;
 import java.util.Date;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -24,6 +26,6 @@ public class Missao {
     private Date dataLimite;
     @ManyToOne
     private Professor criador;
-    @OneToMany
-    private List <Etapa> etapas;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Etapa> etapas;
 }

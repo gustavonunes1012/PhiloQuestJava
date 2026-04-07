@@ -4,7 +4,9 @@ import java.util.List;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,9 +17,11 @@ import lombok.Setter;
 @PrimaryKeyJoinColumn(name = "matricula")
 public class Aluno extends Usuario{
 private int xpTotal;
+@Enumerated(EnumType.STRING)
 private NivelAluno nivel;
+@ManyToOne
 private Turma turma;
-private List<Object> colecao;
+private List<Filosofo> colecao;
 
 public Aluno(String matricula, String nome, String senha) {
     super(matricula, nome, senha);

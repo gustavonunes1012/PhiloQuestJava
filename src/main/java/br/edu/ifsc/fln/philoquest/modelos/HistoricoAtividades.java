@@ -4,8 +4,10 @@ import java.util.Date;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumeratedValue;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,7 +21,7 @@ public class HistoricoAtividades {
     private long id;
     private String descricao;
     private int xpGanho;
-    @EnumeratedValue
+    @Enumerated(EnumType.STRING)
     private TipoAtividadeHistorico tipoAtividade;
     private Date data;
 }

@@ -4,7 +4,8 @@ import java.util.Date;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumeratedValue;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +16,7 @@ import lombok.Setter;
 public class RegistroMatricula {
     @Id
     private String matricula;
-    @EnumeratedValue
+    @Enumerated(EnumType.STRING)
     private StatusMatricula status;
     private Date dataImportacao;
 }

@@ -2,9 +2,11 @@ package br.edu.ifsc.fln.philoquest.modelos;
 
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,8 +19,8 @@ public class Filosofo {
     private long id;
     private String nome;
     private String descricao;
+    @Enumerated(EnumType.STRING)
     private EpocaFilosofo epoca;
-    @OneToOne
+    @Enumerated(EnumType.STRING)
     private RaridadeFilosofo raridade;
-    @OneToOne
 }

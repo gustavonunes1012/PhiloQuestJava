@@ -5,9 +5,10 @@ import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +21,10 @@ public class Turma {
     private long id;
 private String nomeDaTurma;
 private String codigoTurma;
-@OneToOne
+@ManyToOne
 private Professor professor;
-@OneToMany
-private List <Aluno> alunos;
+@OneToMany(mappedBy = "turma")
+private List<Aluno> alunos;
 
 public void adicionarAluno (Aluno aluno){}
 public void removerAluno(Aluno aluno) {}

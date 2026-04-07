@@ -3,13 +3,14 @@ package br.edu.ifsc.fln.philoquest.modelos;
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
-
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumeratedValue;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +21,10 @@ public class ProgressoCiclo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @EnumeratedValue
+    @Enumerated(EnumType.STRING)
     private StatusCiclo status;
     private Date dataInicio;
     private Date dataConclusao;
-    @ManyToAny
+    @OneToMany
     private List<SubmissaoEtapa> submissoes;
 }

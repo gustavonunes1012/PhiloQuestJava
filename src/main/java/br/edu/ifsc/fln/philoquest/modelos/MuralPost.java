@@ -3,13 +3,14 @@ package br.edu.ifsc.fln.philoquest.modelos;
 import java.util.Date;
 import java.util.List;
 
-import org.hibernate.annotations.ManyToAny;
-
 import br.edu.ifsc.fln.philoquest.modelos.enums.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumeratedValue;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,9 +25,9 @@ public class MuralPost {
     private String titulo;
     private String descricao;
     private Date dataPostagem;
-    @EnumeratedValue
+    @Enumerated(EnumType.STRING)
     private TipoPostMural tipoPost;
-    @ManyToAny
+    @ManyToOne
     private Aluno autor;
     @OneToMany
     private List<Curtida> curtidas;
